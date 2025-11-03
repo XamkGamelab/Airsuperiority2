@@ -1,16 +1,23 @@
 using UnityEngine;
 
-public class SingletonNonMono : MonoBehaviour
+public class SingletonNonMono<T> where T : class, new()
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private static T _instance;
+    private static readonly object _lock = new object();
 
-    // Update is called once per frame
-    void Update()
+    public static T instance
     {
-        
+        get
+        {
+            if (_instance == null)
+            {
+                lock (_lock)
+                {
+                    if (_instance == null)
+                        _instance = new T();
+                }
+            }
+            return _instance;
+        }
     }
 }
