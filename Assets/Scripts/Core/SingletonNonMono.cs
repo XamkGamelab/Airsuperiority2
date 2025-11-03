@@ -5,7 +5,7 @@ public class SingletonNonMono<T> where T : class, new()
     private static T _instance;
     private static readonly object _lock = new object();
 
-    public static T instance
+    public static T Instance
     {
         get
         {
