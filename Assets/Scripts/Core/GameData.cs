@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+public class GameData : SingletonNonMono<GameData>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        Debug.Log("GameData initialized.");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //Example game dataMun tä
+    public int playerScore = 0;
+    public int playerLives = 3;
 }
