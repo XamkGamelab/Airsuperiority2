@@ -35,6 +35,7 @@ public class CoreLoader : Singleton<CoreLoader>
 
         //Initialize Non-Monobehaviour singletons by accessing their instance property
         var settingsData = SettingsData.Instance;
+        var gameData = GameData.Instance;
         //Add other Non-Mono singletons initialization here as needed
 
         //Initialize loading screen
